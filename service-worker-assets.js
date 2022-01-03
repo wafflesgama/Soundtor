@@ -29,7 +29,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-uMj3UcQxkyXNJSFqfa7YlygRBvrpLVqi0Rl0\/fco6B4=",
+      "hash": "sha256-ibxaXIZ36CXGujHyZhPam1Tob71Pg6gaO5NfsrA4VOc=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -37,7 +37,7 @@
       "url": "_framework\/dotnet.6.0.0-preview.7.21377.19.js"
     },
     {
-      "hash": "sha256-gQ4nR636wvxMFKmSiTz8+pjktGLAqYcC1zvWEBa3Z1Q=",
+      "hash": "sha256-SSdxzjWQ6IwKMKV\/XxfRPduFUFeD9uquhw\/5AuEFssA=",
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
@@ -93,7 +93,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-Ofu6y8TOaLxIM3zqDY3W7IMcf8Aw7tGXMKOMk0MsOCc=",
+      "hash": "sha256-F7yOYBnK1Nw4vByeoa2WwrKD3F\/hEm34pNwTlG7Ho\/w=",
       "url": "_framework\/SoundTor.dll"
     },
     {
@@ -109,6 +109,10 @@
       "url": "_framework\/System.ComponentModel.dll"
     },
     {
+      "hash": "sha256-7j3UqkxYjK7LMe50zbgyTdmqIW4H6IZLN4JaBk0\/EwA=",
+      "url": "_framework\/System.Console.dll"
+    },
+    {
       "hash": "sha256-QPlUCCwjnFdMNlpFkG+LDnnrDqq3LJQXIKTmbzb7K5w=",
       "url": "_framework\/System.Memory.dll"
     },
@@ -121,7 +125,7 @@
       "url": "_framework\/System.Net.Primitives.dll"
     },
     {
-      "hash": "sha256-IC2wG6pG59ffGjj9nd0w4udJEAO62ArEYKxWPsy6jhs=",
+      "hash": "sha256-KNTSlelX37wxJlJd4TUPQWS3UiYNt3pnRrR8Up072E0=",
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
@@ -137,7 +141,7 @@
       "url": "_framework\/System.Runtime.CompilerServices.Unsafe.dll"
     },
     {
-      "hash": "sha256-kJlqwLPC0qBRzlplOxtBC9kp+0mZ9MM4EUgVisi9cmo=",
+      "hash": "sha256-+V7vkQEUBxT7Ls8HkaOD81IO9DucU6QdGzxJMSVRxrY=",
       "url": "_framework\/System.Runtime.dll"
     },
     {
@@ -169,13 +173,21 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-CGh03r4VAzB5qZ8m22+\/uyaS1LUbwNdp0WDQlxnel54=",
+      "hash": "sha256-IFDRbap3aaPDRXQa1CW6V1ft1gynkSwrHM2bUy\/NMIQ=",
       "url": "index.html"
+    },
+    {
+      "hash": "sha256-5A0OdqTm1maQHx7kW+F1LgZ2UongNN62DV1KQ8IQoBo=",
+      "url": "js\/osc\/osc-browser.js"
+    },
+    {
+      "hash": "sha256-roYD5RL\/Oi+F4J2vZOS7FmXP\/PvfbUFWT++KM6saPA0=",
+      "url": "js\/Socket.js"
     },
     {
       "hash": "sha256-PcGFA5DbjQJc24HiYOZJpAbWzfR+iMd7sTdXjZuMWjU=",
       "url": "manifest.json"
     }
   ],
-  "version": "FkjCAzwN"
+  "version": "o1BuAzdX"
 };
