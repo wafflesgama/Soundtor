@@ -1,7 +1,7 @@
 ﻿@inherits LayoutComponentBase
 <div class="page">
     <main>
-        <TopBar/>
+        <TopBar />
         <article class="content">
             @Body
         </article>
@@ -11,6 +11,9 @@
 <style>
     .content {
         padding: 20px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
 </style>
