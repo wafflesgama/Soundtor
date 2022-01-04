@@ -8,8 +8,8 @@
 
 <div class="oneline">
     <label class="ipLabel">Machine IP:</label>
-    <input placeholder="Local & Remote IP" value=@ip />
-    <input placeholder="Local & Remote Port" value=@port />
+    <input @oninput=OnIpChanged placeholder="Local & Remote IP" value=@ip />
+    <input @oninput=OnPortChanged placeholder="Local & Remote Port" value=@port />
     <button @onclick=ConnectDisconnect>@connectMessage</button>
     <button @onclick=ToggleDebug>Debug</button>
 </div>
@@ -18,7 +18,7 @@
 {
     @*   <div class="connectionOutput"> The connection was successfull</div>*@
     <div class="debugPanel">
-        <textarea class="connectionOutput" @oninput=HandleOnChange>@debugText</textarea>
+        <textarea class="connectionOutput" @oninput=OnDebugTextChanged>@debugText</textarea>
         <button @onclick=SendDebugData>Submit raw command 4</button>
     </div>
 }
@@ -68,10 +68,10 @@
     }
 
     /* button{
-                            border-radius: 5px;
-                            color:white;
-                            background-color:var(--backColor);
-                        }*/
+                                border-radius: 5px;
+                                color:white;
+                                background-color:var(--backColor);
+                            }*/
 
     .generatorInput {
         margin-top: 45px;
@@ -178,10 +178,16 @@
 @code {
 
     [Parameter] public string debugText { get; set; } = "adc";
+    [Parameter] public string ip { get; set; } = "adc";
+    [Parameter] public string port { get; set; } = "adc";
 
     private bool showDebug, showConnectionOutput, showOutput, isConnected;
     private string connectMessage = "Connect";
-    private string ip = "", port = "";
+
+    private async Task OnDebugTextChanged(ChangeEventArgs args) => debugText = args.Value.ToString();
+    private async Task OnIpChanged(ChangeEventArgs args) => ip = args.Value.ToString();
+    private async Task OnPortChanged(ChangeEventArgs args) => port = args.Value.ToString();
+
 
     private void ConnectDisconnect()
     {
@@ -219,11 +225,6 @@
         SendData(debugText);
     }
 
-    private async Task HandleOnChange(ChangeEventArgs args)
-    {
-        debugText = args.Value.ToString();
-
-    }
 
     private void SendData(string msg)
     {
