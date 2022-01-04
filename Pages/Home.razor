@@ -16,10 +16,10 @@
 
 @if (showDebug)
 {
-    <div class="connectionOutput"> The connection was successfull</div>
+ @*   <div class="connectionOutput"> The connection was successfull</div>*@
     <div class="debugPanel">
         <textarea class="connectionOutput" value=@debugText />
-        <button>Submit raw command</button>
+        <button @onclick=SendDebugData>Submit raw command</button>
     </div>
 }
 
@@ -59,6 +59,12 @@
         font-size: 13px;
         border-radius: 5px;
         border: 1px solid #d7d7d7;
+    }
+
+    .debugPanel{
+        display:inline-flex;
+        margin-top:15px;
+        min-height:200px;
     }
 
     /* button{
