@@ -29,7 +29,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-bNDbxOnSHnZZQplrXq4IpVcEcnb1Q4L5jVm7Djpp9Aw=",
+      "hash": "sha256-kJzoAL8GlNhC+DxYrr35cx8a112tod\/6cqHm4d\/BA4s=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -93,7 +93,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-cFSpA2Ca3Bm8PLW7lCHOq9TvDuoaIt4AxZnfqcZBscQ=",
+      "hash": "sha256-6XkSQZMzpFqO3t\/S\/uCfvl+LkcjbaBUGw4Jm7MA4yNo=",
       "url": "_framework\/SoundTor.dll"
     },
     {
@@ -173,7 +173,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-IFDRbap3aaPDRXQa1CW6V1ft1gynkSwrHM2bUy\/NMIQ=",
+      "hash": "sha256-uhdc8Mmz4+72J\/F4U8ipwAzOyUq+rytRosF4jmLeIbE=",
       "url": "index.html"
     },
     {
@@ -181,7 +181,7 @@
       "url": "js\/osc\/osc-browser.js"
     },
     {
-      "hash": "sha256-roYD5RL\/Oi+F4J2vZOS7FmXP\/PvfbUFWT++KM6saPA0=",
+      "hash": "sha256-9PbAJtL787\/C6+AUDhiLnAj6zVTlMY6GjhH+\/IEJp0Y=",
       "url": "js\/Socket.js"
     },
     {
@@ -189,5 +189,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "CPgiYHH5"
+  "version": "T3w8tBSx"
 };
