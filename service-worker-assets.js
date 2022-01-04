@@ -173,7 +173,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-vY4LZJa61UQnPMqszPt2SvZDPkDtTlPuHii+PGuqIF0=",
+      "hash": "sha256-9hyetY0Usrz\/TXpRxSca7SLWHgMIRTsUDZc4ZxtDNO4=",
       "url": "index.html"
     },
     {
@@ -217,5 +217,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "9QM1jGkJ"
+  "version": "ftrDztYW"
 };
