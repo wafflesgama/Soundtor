@@ -125,31 +125,38 @@
     .inputResultContainer {
         margin-top: 10px;
         display: flex;
+        filter: drop-shadow(5px 5px 4px #808080);
+        background-color: white;
     }
 
     .inputResult {
         pointer-events: none;
-        padding: 5px;
-        border-radius: 25px 0px 0px 25px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        border-radius: 4px 0px 0px 4px;
         width: 500px;
-        height: 25px;
+        line-height: 25px;
         border: 2px solid black;
     }
 
     .generateButton {
         border-style: solid;
-        border-radius: 0px 25px 25px 0px;
+        border-radius: 0px 4px 4px 0px;
         color: white;
         background-color: var(--backColor);
         padding-right: 15px;
+        padding-left: 15px;
         font-weight: bold;
         margin-left: -2px;
         border-color: #000000;
+        margin-right: -2px;
+        line-height: 25px;
     }
 
     .generateButton:active {
         border-style: solid;
-        border-radius: 0px 25px 25px 0px;
+        border-radius: 0px 4px 4px 0px;
         color: white;
         background-color: #E3E3E3;
         padding-right: 15px;
@@ -157,6 +164,7 @@
         margin-left: -2px;
         border-color: #000000;
         color: #000000;
+        margin-right: -2px;
     }
 </style>
 
