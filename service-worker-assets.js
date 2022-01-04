@@ -33,11 +33,11 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-C52KsMUPNwTvvfbsOEH7rljrU6+Eux2+GeW+3Ja5TFc=",
+      "hash": "sha256-ICHAbJzN0WRqx+GCD+Xz601fRfE1kxF6S3xpxhY65o4=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-Ljpqh3jltLpZlVqf9\/d850LCX1smyGMkH2uYPNuMPqc=",
+      "hash": "sha256-eJtnX62YaQJq3uB0oPbA\/CyGXatfKVKgvuopU4A8YYc=",
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
@@ -93,7 +93,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-yKjYDuV+2lp6FOexXKQPSgDJZWCb0fOu+4Ee9z+79xg=",
+      "hash": "sha256-ZdK2MUIpBBGu8CnAEYzCiM7Nh7XlEfrqXq1wiVSyOAs=",
       "url": "_framework\/SoundTor.dll"
     },
     {
@@ -141,7 +141,7 @@
       "url": "_framework\/System.Runtime.CompilerServices.Unsafe.dll"
     },
     {
-      "hash": "sha256-cbJoLiMoRwBqkNbMP5sNw5VSzEUCCfPqlxxzWygFkNs=",
+      "hash": "sha256-jjDybMQk1Ar1JIXDsnQ7eM09ahQdZbhLSiNN0DgSZe8=",
       "url": "_framework\/System.Runtime.dll"
     },
     {
@@ -173,7 +173,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-TKnMaxKTYSU3TdgkO4wSNXjnECWKGdG7XoRKy29r7Bo=",
+      "hash": "sha256-vY4LZJa61UQnPMqszPt2SvZDPkDtTlPuHii+PGuqIF0=",
       "url": "index.html"
     },
     {
@@ -181,7 +181,35 @@
       "url": "js\/osc\/osc-browser.js"
     },
     {
-      "hash": "sha256-9PbAJtL787\/C6+AUDhiLnAj6zVTlMY6GjhH+\/IEJp0Y=",
+      "hash": "sha256-bZA9unwBM6iWfzKfV8yT5zIJc9sHEf3uoODdejnfeCI=",
+      "url": "js\/osc\/osc-browser.min.js"
+    },
+    {
+      "hash": "sha256-Xl1aS7Xu6zimnDICRo3cAkuoSgH4Tqm7Cglz91lqeoc=",
+      "url": "js\/osc\/osc-chromeapp.js"
+    },
+    {
+      "hash": "sha256-E\/FLCB9\/m3+VoAc9Lo7wyRvAAzsSG6mX4cAMPAZfZA8=",
+      "url": "js\/osc\/osc-chromeapp.min.js"
+    },
+    {
+      "hash": "sha256-h3I0ED30URF0qL7yEF2dYzGbBc1yBOwxXd7LUzDvgNI=",
+      "url": "js\/osc\/osc-module.js"
+    },
+    {
+      "hash": "sha256-IdU5f6Tttj+MdcKhOhUBNnE562MQ2Q3kZEiYYqbX+qQ=",
+      "url": "js\/osc\/osc-module.min.js"
+    },
+    {
+      "hash": "sha256-LMRHkgRi\/ovebP8xNvMdwBBjeVguIVFlK\/44Ymgnn74=",
+      "url": "js\/osc\/osc.js"
+    },
+    {
+      "hash": "sha256-tCdWZAHKLQleYz2LtS7qmsZDshqcRTg7boR3d5CeyzM=",
+      "url": "js\/osc\/osc.min.js"
+    },
+    {
+      "hash": "sha256-uNZsxUwPDpU9fCCr93A097ar2FJKcs+Bm+zVW7HGSl0=",
       "url": "js\/Socket.js"
     },
     {
@@ -189,5 +217,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "UA6\/TSkj"
+  "version": "9QM1jGkJ"
 };
