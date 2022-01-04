@@ -28,7 +28,7 @@ jobs:
         
      # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to start with repo name
-      run: sed -i 's/<base href="\/" \/>/<base href="\/Soundtor\/" \/>/g' release/wwwroot/index.html
+      run: sed -i 's/<base href="\/"\/>/<base href="\/Soundtor\/" \/>/g' release/wwwroot/index.html
    
      # Change all local scripts src
     - name: Change all local scripts src
