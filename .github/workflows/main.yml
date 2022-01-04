@@ -31,8 +31,8 @@ jobs:
       run: sed -i 's/<base href="\/"\/>/<base href="\/Soundtor\/" \/>/g' release/wwwroot/index.html
    
      # Change all local scripts src
-    - name: Change all local scripts src
-      run: sed -i 's/src="js/src="Soundtor\/js/g' release/wwwroot/index.html
+#    - name: Change all local scripts src
+ #     run: sed -i 's/src="js/src="Soundtor\/js/g' release/wwwroot/index.html
  
     # copy index.html to 404.html to serve the same file when a file is not found
     - name: copy index.html to 404.html
