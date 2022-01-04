@@ -209,13 +209,13 @@
       "url": "js\/osc\/osc.min.js"
     },
     {
-      "hash": "sha256-uNZsxUwPDpU9fCCr93A097ar2FJKcs+Bm+zVW7HGSl0=",
-      "url": "js\/Socket.js"
+      "hash": "sha256-BqSkogEI8xwy398i3HZka2QFWzcPPiJd9+Oc3ak1NB8=",
+      "url": "js\/socket.js"
     },
     {
       "hash": "sha256-PcGFA5DbjQJc24HiYOZJpAbWzfR+iMd7sTdXjZuMWjU=",
       "url": "manifest.json"
     }
   ],
-  "version": "9hDxiOIx"
+  "version": "PJSRS6fN"
 };
