@@ -27,12 +27,12 @@
     <p>I want an instrument like:</p>
     <br />
     <div>
-        <button class="tag">Funky</button>
-        <button class="tag">Jazzy</button>
-        <button class="tag">Grim</button>
-        <button class="tag">Classical</button>
-        <button class="tag">Noisy</button>
-        <button class="tag">Jazzy</button>
+        <button class="tag_vibe">Funky</button>
+        <button class="tag_vibe">Jazzy</button>
+        <button class="tag_atmos">Grim</button>
+        <button class="tag_genre">Classical</button>
+        <button class="tag_atmos">Noisy</button>
+        <button class="tag_vibe">Jazzy</button>
     </div>
     <div class="inputResultContainer">
         <div class="inputResult">Add one or more tags...</div>
@@ -74,10 +74,53 @@
         align-items: center;
     }
 
-    .tag {
+    .tag_genre {
+        border-style: solid;
         border-radius: 25px;
         padding: 5px;
+        border-color: #FFD53F;
+        background-color: #FCF8EC;
     }
+
+    .tag_genre:active {
+        border-style: solid;
+        border-radius: 25px;
+        padding: 5px;
+        border-color: #DDB833;
+        background-color: #F2EEDE;
+    }
+
+    .tag_atmos {
+        border-style: solid;
+        border-radius: 25px;
+        padding: 5px;
+        border-color: #3F97FF;
+        background-color: #ECF4FC;
+    }
+    .tag_atmos:active {
+        border-style: solid;
+        border-radius: 25px;
+        padding: 5px;
+        border-color: #3A84DA;
+        background-color: #E1E9F0;
+    }
+    
+    .tag_vibe {
+        border-style: solid;
+        border-radius: 25px;
+        padding: 5px;
+        border-color: #3FFF75;
+        background-color: #EDFCEC;
+    }
+
+    .tag_vibe:active {
+        border-style: solid;
+        border-radius: 25px;
+        padding: 5px;
+        border-color: #37E467;
+        background-color: #E4F3E3;
+    }
+
 
     .inputResultContainer {
         margin-top: 10px;
@@ -94,12 +137,26 @@
     }
 
     .generateButton {
+        border-style: solid;
         border-radius: 0px 25px 25px 0px;
         color: white;
         background-color: var(--backColor);
         padding-right: 15px;
         font-weight: bold;
         margin-left: -2px;
+        border-color: #000000;
+    }
+
+    .generateButton:active {
+        border-style: solid;
+        border-radius: 0px 25px 25px 0px;
+        color: white;
+        background-color: #E3E3E3;
+        padding-right: 15px;
+        font-weight: bold;
+        margin-left: -2px;
+        border-color: #000000;
+        color: #000000;
     }
 </style>
 
