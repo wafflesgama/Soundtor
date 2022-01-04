@@ -23,5 +23,7 @@ function ClosePort() {
 }
 
 function SendData(data) {
-    udpPort.send(data));
+    console.log("Sending data "+data);
+    var result = udpPort.send(data));
+    console.log("Result: " + result);
 }
