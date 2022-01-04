@@ -33,7 +33,7 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-weQRD5KgJnNWtPtNj2UU+ta7DFeSYZe2Pm+XIX\/kEhU=",
+      "hash": "sha256-JLqkGZh4eD74i3BNtxt8RpVkSWLgF9pE4GNg\/4qjb\/Y=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -93,7 +93,7 @@
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
     },
     {
-      "hash": "sha256-ugbr9IfXteWedT7xCgCJmXDK9weyoUpDbJFXoh5zGJE=",
+      "hash": "sha256-fIaqoA6GVPJWVCZF82kblevd9btLyJDO83cR+U+2iYU=",
       "url": "_framework\/SoundTor.dll"
     },
     {
@@ -217,5 +217,5 @@
       "url": "manifest.json"
     }
   ],
-  "version": "6yKOkmoz"
+  "version": "vePzSFRF"
 };
