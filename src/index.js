@@ -1,33 +1,74 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const EventEmitter = require('events')
+const loadingEvents = new EventEmitter()
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
 }
 
-const createWindow = () => {
+const createLoadingWindow = () => {
+
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  const loadingWindow = new BrowserWindow({
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
     },
     width: 800,
     height: 600,
+    frame: false,
+    transparent: true
   });
 
+  loadingWindow.loadFile(path.join(__dirname, 'loading.html'));
+  loadingEvents.on('finished', () => {
+    loadingWindow.close();
+  })
+
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
+};
+
+const createMainWindow = () => {
+
+  // Create the browser window.
+  const mainWindow = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
+    show: false,
+    width: 1200,
+    height: 900,
+  });
+
+  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+
+  loadingEvents.on('finished', () => {
+    mainWindow.show();
+    mainWindow.webContents.openDevTools();
+  })
+  // and load the index.html of the app.
+
+  // Open the DevTools.
 };
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', () => {
+  createLoadingWindow();
+  createMainWindow();
+
+  setTimeout(() => loadingEvents.emit('finished'), 2000);
+
+
+
+});
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
