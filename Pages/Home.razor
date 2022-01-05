@@ -12,6 +12,7 @@
     <input @oninput=OnPortChanged placeholder="Local & Remote Port" value=@port />
     <button @onclick=ConnectDisconnect>@connectMessage</button>
     <button @onclick=ToggleDebug>Debug</button>
+    <button @onclick=SendMessageTest>Quick msg</button>
 </div>
 
 @if (showDebug)
