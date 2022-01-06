@@ -2,27 +2,33 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Hello World!</title>
-  <link rel="stylesheet" href="index.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
- 
-  <script src="../node_modules/osc/dist/osc-browser.min.js"></script>
-  <script defer src="render.js"></script>
+    <meta charset="UTF-8">
+    <title>Soundtor</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script>window.$ = window.jQuery = require('jquery');</script>
 
-      <!--External Fonts-->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <script src="../node_modules/osc/dist/osc-browser.min.js"></script>
+    <script defer src="render.js"></script>
+
+    <!--External Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  
-<h1>MIDI instrument generator</h1>
+    <div class="topBarContainer">
+        <span class="logoTitle">Soundtor</span>
+        <h4 class="headerText" href="/about">about</h4>
+    </div>
 
-<!-- <div class="oneline">
+
+    <h1 class="mainTitle">MIDI instrument generator</h1>
+
+    <!-- <div class="oneline">
     <label class="ipLabel">Machine IP:</label>
     <input @oninput=OnIpChanged placeholder="Local & Remote IP"  />
     <input @oninput=OnPortChanged placeholder="Local & Remote Port" value=@port />
@@ -31,145 +37,186 @@
     <button @onclick=SendMessageTest>Quick msg</button>
 </div> -->
 
-<div class="connectionOutput"> The connection was successfull</div>
+    <div class="connectionOutput"> The connection was successfull</div>
 
-<div class="generatorInput">
-    <p>I want an instrument like:</p>
-    <br />
-    <div>
-        <button class="tag_vibe">Funky</button>
-        <button class="tag_vibe">Jazzy</button>
-        <button class="tag_atmos">Grim</button>
-        <button class="tag_genre">Classical</button>
-        <button class="tag_atmos">Noisy</button>
-        <button class="tag_vibe">Jazzy</button>
+    <div class="generatorInput">
+        <p>I want an instrument like:</p>
+        <br />
+        <div class="tagsContainer">
+            <button class="tag tag_vibe">Funky</button>
+            <button class="tag tag_vibe">Jazzy</button>
+            <button class="tag tag_atmos">Grim</button>
+            <button class="tag tag_genre">Classical</button>
+            <button class="tag tag_atmos">Noisy</button>
+            <button class="tag">Jazzy</button>
+        </div>
+        <div class="inputResultContainer">
+            <div class="inputResult">Add one or more tags...</div>
+            <button class="backButton">X</button>
+            <button class="generateButton">Make it!</button>
+        </div>
+        <p>Choose at maximum <b>1</b> of each category</p>
     </div>
-    <div class="inputResultContainer">
-        <div class="inputResult">Add one or more tags...</div>
-        <button class="generateButton">Make it!</button>
-    </div>
-    <p>Choose at maximum <b>1</b> of each category</p>
-</div>
 
-<style>
-    .oneline {
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-    }
+    <style>
+        .topBarContainer {
+            padding: 0px 10px 0px 10px;
+            display: flex;
+            height: 50px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--backColor);
+        }
 
-    .ipLabel {
-        margin-right: 10px;
-    }
+        .logoTitle {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primaryColor);
+        }
 
-    .connectionOutput {
-        padding: 20px;
-        margin: 15px;
-        background-color: #f1f1f1;
-        font-size: 13px;
-        border-radius: 5px;
-        border: 1px solid #d7d7d7;
-    }
+        .headerText {
+            color: var(--primaryColor);
+        }
 
-    .debugPanel {
-        display: inline-flex;
-        margin-top: 15px;
-        min-height: 200px;
-    }
+        .mainTitle {
+            text-align: center;
+            width: 100%;
+        }
 
-    /* button{
+        .oneline {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+        }
+
+        .ipLabel {
+            margin-right: 10px;
+        }
+
+        .connectionOutput {
+            padding: 20px;
+            margin: 15px;
+            background-color: #f1f1f1;
+            font-size: 13px;
+            border-radius: 5px;
+            border: 1px solid #d7d7d7;
+        }
+
+
+        .debugPanel {
+            display: inline-flex;
+            margin-top: 15px;
+            min-height: 200px;
+        }
+
+        /* button{
                                 border-radius: 5px;
                                 color:white;
                                 background-color:var(--backColor);
                             }*/
 
-    .generatorInput {
-        margin-top: 45px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+        .generatorInput {
+            margin-top: 45px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    .tag_genre {
-        border-style: solid;
-        border-radius: 25px;
-        padding: 5px;
-        border-color: #FFD53F;
-        background-color: #FCF8EC;
-    }
+        .tagsContainer {
+            display: flex;
+        }
+
+        .tag {
+            border-style: solid;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 2px;
+        }
+
+        .tag_genre {
+
+            border-color: #FFD53F;
+            background-color: #FCF8EC;
+        }
 
         .tag_genre:active {
-            border-style: solid;
-            border-radius: 25px;
-            padding: 5px;
+
             border-color: #DDB833;
             background-color: #F2EEDE;
         }
 
-    .tag_atmos {
-        border-style: solid;
-        border-radius: 25px;
-        padding: 5px;
-        border-color: #3F97FF;
-        background-color: #ECF4FC;
-    }
+        .tag_atmos {
+
+            border-color: #3F97FF;
+            background-color: #ECF4FC;
+        }
 
         .tag_atmos:active {
-            border-style: solid;
-            border-radius: 25px;
-            padding: 5px;
+
             border-color: #3A84DA;
             background-color: #E1E9F0;
         }
 
-    .tag_vibe {
-        border-style: solid;
-        border-radius: 25px;
-        padding: 5px;
-        border-color: #3FFF75;
-        background-color: #EDFCEC;
-    }
+        .tag_vibe {
+
+            border-color: #3FFF75;
+            background-color: #EDFCEC;
+        }
 
         .tag_vibe:active {
-            border-style: solid;
-            border-radius: 25px;
-            padding: 5px;
+
             border-color: #37E467;
             background-color: #E4F3E3;
         }
 
 
-    .inputResultContainer {
-        margin-top: 10px;
-        display: flex;
-        filter: drop-shadow(5px 5px 4px #808080);
-        background-color: white;
-    }
+        .inputResultContainer {
+            margin-top: 10px;
+            user-select: none;
+            display: flex;
+            /* filter: drop-shadow(5px 5px 4px #808080); */
+            background-color: white;
+        }
 
-    .inputResult {
-        pointer-events: none;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 15px;
-        border-radius: 4px 0px 0px 4px;
-        width: 500px;
-        line-height: 25px;
-        border: 2px solid black;
-    }
+        .inputResult {
+            pointer-events: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 15px;
+            border-radius: 4px 0px 0px 4px;
+            width: 500px;
+            line-height: 25px;
+            border: 2px solid black;
+        }
 
-    .generateButton {
-        border-style: solid;
-        border-radius: 0px 4px 4px 0px;
-        color: white;
-        background-color: var(--backColor);
-        padding-right: 15px;
-        padding-left: 15px;
-        font-weight: bold;
-        margin-left: -2px;
-        border-color: #000000;
-        margin-right: -2px;
-        line-height: 25px;
-    }
+        .backButton {
+            height: 90%;
+            align-self: center;
+            border-radius: 10px;
+            border-width: 0px;
+            color: white;
+            background-color: rgb(94, 94, 94);
+            margin: 0px 8px 0px -30px;
+        }
+
+        .backButton:active {
+            opacity: .5;
+        }
+
+        .generateButton {
+            border-style: solid;
+            border-radius: 0px 4px 4px 0px;
+            color: white;
+            background-color: var(--backColor);
+            padding-right: 15px;
+            padding-left: 15px;
+            font-weight: bold;
+            margin-left: -2px;
+            border-color: #000000;
+            margin-right: -2px;
+            line-height: 25px;
+        }
 
         .generateButton:active {
             border-style: solid;
@@ -183,7 +230,40 @@
             color: #000000;
             margin-right: -2px;
         }
-</style>
+    </style>
 </body>
+<footer>
+    <label>V0.1</label>
+    <span class="expander"> </span>
+    <label>Port:9001</label>
+    <label>Status:Connected</label>
+    <button>Disconnect</button>
+
+    <style>
+        footer {
+            background-color: lightgray;
+            /* height: 2px; */
+            display: flex;
+            position: absolute;
+            width: 100vw;
+            opacity: .5;
+            bottom: 0px;
+            padding: 4px 0px 4px 0px;
+            align-items: center;
+            font-size: 12px;
+
+        }
+
+        .expander {
+            flex-grow: 1;
+        }
+
+        footer>* {
+            margin-left: 6px;
+            margin-right: 6px;
+        }
+    </style>
+</footer>
+
 
 </html>
