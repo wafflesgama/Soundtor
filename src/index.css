@@ -12,6 +12,7 @@ html, body {
   --backColor: black;
   /*--backColor: #e9f4ff;*/
   margin: 0;
+  overflow: hidden;
 }
 
 .content {

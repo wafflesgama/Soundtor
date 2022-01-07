@@ -45,8 +45,9 @@ const createMainWindow = () => {
       contextIsolation: false,
     },
     show: false,
-    width: 1000,
-    height: 600,
+    width: 1100,
+    height: 700,
+    autoHideMenuBar: true //hide menu bar
   });
 
   mainWindow.loadFile(path.join(__dirname, 'index.html'));

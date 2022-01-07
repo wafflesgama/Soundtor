@@ -11,6 +11,7 @@
     </script>
 
     <script src="../node_modules/osc/dist/osc-browser.min.js"></script>
+    <script src="../node_modules/polygonchart.js/dist/PolygonChart.umd.js"></script>
     <script defer src="render.js"></script>
 
     <!--External Fonts-->
@@ -18,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet" />
     <link href="../node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../node_modules/animate.css/animate.css" />
 </head>
 
 <body>
@@ -27,12 +28,11 @@
         <h4 class="headerText" href="/about">about</h4>
     </div>
 
-    <h1 class="mainTitle">MIDI instrument generator</h1>
+    <!-- <h1 class="mainTitle">MIDI instrument generator</h1> -->
 
     <!-- <div class="connectionOutput"> The connection was successfull</div> -->
     <div class="generatorInput">
-        <p>I want an instrument like:</p>
-        <br />
+        <h2>I want an instrument like:</h2>
         <div class="tagsContainer">
             <button class="tag tag_vibe animate__bounceIn">Funky</button>
             <button class="tag tag_vibe animate__bounceIn">Jazzy</button>
@@ -47,11 +47,34 @@
             <button class="generateButton"><i class="fab fa-itunes-note"></i><span>Make it!</span></button>
         </div>
         <p>Choose at maximum <b>1</b> of each category</p>
+        <div class="stats animate__animated animate__fadeInUp">
+            <div>    
+                <img class="staticPoly" src="../assets/polygon.png" />
+                <div id='chart-container'></div>
+            </div>
+            <div class="sliders">
+                <form class="slider-form" ><input class="slider slider1" type="range" min="0" max="100" value="50" class="slider"
+                        id="myRange"></form>
+                <form class="slider-form"><input class="slider slider2" type="range" min="0" max="100" value="50" class="slider"
+                        id="myRange"></form>
+                <form class="slider-form"><input class="slider slider3" type="range" min="0" max="100" value="50" class="slider"
+                        id="myRange"></form>
+                <form class="slider-form"><input class="slider slider4" type="range" min="0" max="100" value="50" class="slider"
+                        id="myRange"></form>
+                <form class="slider-form"><input class="slider slider5" type="range" min="0" max="100" value="50" class="slider"
+                        id="myRange"></form>
+            </div>
+        </div>
+    </div>
+
     </div>
 
     <style>
         .white {
             color: white;
+        }
+        .hidden{
+            display: none !important;
         }
 
         .topBarContainer {
@@ -106,7 +129,7 @@
         }
 
         .generatorInput {
-            margin-top: 45px;
+            margin-top: 35px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -163,7 +186,7 @@
 
             border-color: #d4362b;
             color: #d4362b;
-            background-color: #E4F3E3;
+            background-color: #eed7d7;
         }
 
         .tag_vibe {
@@ -187,7 +210,19 @@
         .tag_aria:active {
             border-color: #401cc4;
             color: #401cc4;
-            background-color: #eae3f3;
+            background-color: #d0c3e0;
+        }
+
+        .tag_def {
+            border-color: #272727;
+            color: #272727;
+            background-color: white;
+        }
+
+        .tag_def:active {
+            border-color: #272727;
+            color: #272727;
+            background-color: #e6e6e6;
         }
 
 
@@ -249,12 +284,12 @@
             padding-left: 15px;
             width: 90px;
             font-weight: bold;
-            margin-left: -3px;  
+            margin-left: -3px;
             border-color: #000000;
             margin-right: -2px;
             line-height: 25px;
         }
-        
+
         .generateButton:active {
             border-style: solid;
             border-radius: 0px 4px 4px 0px;
@@ -297,12 +332,144 @@
         .generateButton:active>* {
             color: black;
         }
+
+        .stats {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .sliders {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 271px;
+            height: 210px;
+            align-self: center;
+        }
+
+        .slider {
+            width: 200px;
+            /* -webkit-appearance: none; */
+        }
+
+        .slider1 {
+            --sliderColor: #ffd311;
+        }
+
+        .slider2 {
+            --sliderColor: #48ff00;
+        }
+
+        .slider3 {
+            --sliderColor: #00b7ff;
+        }
+
+        .slider4 {
+            --sliderColor: #ae00ff;
+        }
+
+        .slider5 {
+            --sliderColor: #ff0000;
+        }
+
+
+
+        input[type="range"] {
+            margin: auto;
+            -webkit-appearance: none;
+            position: relative;
+            overflow: hidden;
+            height: 16px;
+            width: 200px;
+            cursor: pointer;
+            border-radius: 25px;
+            /* iOS */
+        }
+
+        ::-webkit-slider-runnable-track {
+            background: rgb(240, 240, 240);
+            border-radius: 25px;
+        }
+
+        ::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 200px;
+            background: var(--sliderColor);
+            box-shadow: -100vw 0 0 100vw var(--sliderColor);
+            border: 2px solid var(--sliderColor);
+            /* 1 */
+        }
+
+        ::-moz-range-track {
+            height: 40px;
+            background: #ddd;
+        }
+
+        /* 
+        ::-moz-range-thumb {
+            background: #fff;
+            height: 40px;
+            width: 20px;
+            border: 3px solid #999;
+            border-radius: 0 !important;
+            box-shadow: -100vw 0 0 100vw dodgerblue;
+            box-sizing: border-box;
+        } */
+
+        /* ::-ms-fill-lower {
+            background: rgb(188, 207, 12);
+        }
+
+        ::-ms-thumb {
+            background: rgb(250, 51, 51);
+            border: 2px solid #999;
+            height: 40px;
+            width: 20px;
+            border-radius: 20px;
+            box-sizing: border-box;
+        } */
+
+        /* ::-ms-ticks-after {
+            display: none;
+        }
+
+        ::-ms-ticks-before {
+            display: none; */
+        /* } */
+
+        /* ::-ms-track {
+            background: #ddd;
+            color: transparent;
+            height: 40px;
+            border: none;
+            border-radius: 20px;
+        } */
+
+        ::-ms-tooltip {
+            display: none;
+        }
+
+        #chart-container {
+            display: block;
+            width: 340px;
+            height: 340px;
+            filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, .2));
+        }
+
+        .staticPoly {
+            margin-bottom: -314px;
+            margin-left: 12px;
+            width: 318px;
+            /* filter: drop-shadow(0px 4px 10px rgba(0,0,0,.2)); */
+        }
     </style>
 </body>
 <footer>
     <label>V0.1</label>
     <span class="expander"> </span>
-    <label>Port:9001</label>
+    <label>Port:</label>
+    <input class="portInput" type="number" value="9001" />
     <label>Status:Connected</label>
     <button>Disconnect</button>
 
@@ -323,6 +490,10 @@
 
         .expander {
             flex-grow: 1;
+        }
+
+        .portInput {
+            width: 50px;
         }
 
         footer>* {
