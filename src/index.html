@@ -5,18 +5,20 @@
     <meta charset="UTF-8">
     <title>Soundtor</title>
     <link rel="stylesheet" href="index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
 
     <script src="../node_modules/osc/dist/osc-browser.min.js"></script>
     <script defer src="render.js"></script>
 
     <!--External Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet" />
+    <link href="../node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
@@ -25,40 +27,33 @@
         <h4 class="headerText" href="/about">about</h4>
     </div>
 
-
     <h1 class="mainTitle">MIDI instrument generator</h1>
 
-    <!-- <div class="oneline">
-    <label class="ipLabel">Machine IP:</label>
-    <input @oninput=OnIpChanged placeholder="Local & Remote IP"  />
-    <input @oninput=OnPortChanged placeholder="Local & Remote Port" value=@port />
-    <button @onclick=ConnectDisconnect>@connectMessage</button>
-    <button @onclick=ToggleDebug>Debug</button>
-    <button @onclick=SendMessageTest>Quick msg</button>
-</div> -->
-
-    <div class="connectionOutput"> The connection was successfull</div>
-
+    <!-- <div class="connectionOutput"> The connection was successfull</div> -->
     <div class="generatorInput">
         <p>I want an instrument like:</p>
         <br />
         <div class="tagsContainer">
-            <button class="tag tag_vibe">Funky</button>
-            <button class="tag tag_vibe">Jazzy</button>
-            <button class="tag tag_atmos">Grim</button>
-            <button class="tag tag_genre">Classical</button>
-            <button class="tag tag_atmos">Noisy</button>
-            <button class="tag">Jazzy</button>
+            <button class="tag tag_vibe animate__bounceIn">Funky</button>
+            <button class="tag tag_vibe animate__bounceIn">Jazzy</button>
+            <button class="tag tag_atmos animate__bounceIn">Grim</button>
+            <button class="tag tag_genre animate__bounceIn">Classical</button>
+            <button class="tag tag_atmos animate__bounceIn">Noisy</button>
+            <button class="tag animate__bounceIn">Jazzy</button>
         </div>
         <div class="inputResultContainer">
             <div class="inputResult">Add one or more tags...</div>
-            <button class="backButton">X</button>
-            <button class="generateButton">Make it!</button>
+            <button class="backButton a_button"><i class="fas fa-undo-alt"></i></button>
+            <button class="generateButton"><i class="fab fa-itunes-note"></i><span>Make it!</span></button>
         </div>
         <p>Choose at maximum <b>1</b> of each category</p>
     </div>
 
     <style>
+        .white {
+            color: white;
+        }
+
         .topBarContainer {
             padding: 0px 10px 0px 10px;
             display: flex;
@@ -110,12 +105,6 @@
             min-height: 200px;
         }
 
-        /* button{
-                                border-radius: 5px;
-                                color:white;
-                                background-color:var(--backColor);
-                            }*/
-
         .generatorInput {
             margin-top: 45px;
             display: flex;
@@ -125,6 +114,7 @@
 
         .tagsContainer {
             display: flex;
+            min-height: 35px;
         }
 
         .tag {
@@ -137,38 +127,69 @@
         .tag_genre {
 
             border-color: #FFD53F;
+            color: #FFD53F;
             background-color: #FCF8EC;
         }
 
         .tag_genre:active {
 
             border-color: #DDB833;
+            color: #DDB833;
             background-color: #F2EEDE;
         }
 
         .tag_atmos {
 
             border-color: #3F97FF;
+            color: #3F97FF;
             background-color: #ECF4FC;
         }
 
         .tag_atmos:active {
 
-            border-color: #3A84DA;
+            border-color: #3F97FF;
+            color: #3A84DA;
             background-color: #E1E9F0;
         }
 
-        .tag_vibe {
+        .tag_pulse {
 
+            border-color: #f15145;
+            color: #f15145;
+            background-color: #fcf0ec;
+        }
+
+        .tag_pulse:active {
+
+            border-color: #d4362b;
+            color: #d4362b;
+            background-color: #E4F3E3;
+        }
+
+        .tag_vibe {
             border-color: #3FFF75;
+            color: #3FFF75;
             background-color: #EDFCEC;
         }
 
         .tag_vibe:active {
-
             border-color: #37E467;
+            color: #37E467;
             background-color: #E4F3E3;
         }
+
+        .tag_aria {
+            border-color: #693fff;
+            color: #693fff;
+            background-color: #eae3f3;
+        }
+
+        .tag_aria:active {
+            border-color: #401cc4;
+            color: #401cc4;
+            background-color: #eae3f3;
+        }
+
 
 
         .inputResultContainer {
@@ -180,12 +201,15 @@
         }
 
         .inputResult {
+            display: flex;
+            align-items: center;
             pointer-events: none;
             padding-top: 5px;
             padding-bottom: 5px;
             padding-left: 15px;
             border-radius: 4px 0px 0px 4px;
             width: 500px;
+            min-height: 34px;
             line-height: 25px;
             border: 2px solid black;
         }
@@ -195,40 +219,83 @@
             align-self: center;
             border-radius: 10px;
             border-width: 0px;
-            color: white;
-            background-color: rgb(94, 94, 94);
-            margin: 0px 8px 0px -30px;
+            color: black;
+            background-color: transparent;
+            margin: 0px 8px 0px -31px;
         }
 
         .backButton:active {
             opacity: .5;
         }
 
+        .fa-itunes-note {
+            margin-right: 5px;
+            margin-left: -5px;
+        }
+
         .generateButton {
+            transition: all .2s ease-out;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            opacity: 1;
+
+
             border-style: solid;
             border-radius: 0px 4px 4px 0px;
             color: white;
             background-color: var(--backColor);
             padding-right: 15px;
             padding-left: 15px;
+            width: 90px;
             font-weight: bold;
-            margin-left: -2px;
+            margin-left: -3px;  
             border-color: #000000;
             margin-right: -2px;
             line-height: 25px;
         }
-
+        
         .generateButton:active {
             border-style: solid;
             border-radius: 0px 4px 4px 0px;
             color: white;
+            overflow: hidden;
             background-color: #E3E3E3;
+            padding-left: 15px;
             padding-right: 15px;
             font-weight: bold;
             margin-left: -2px;
             border-color: #000000;
             color: #000000;
             margin-right: -2px;
+        }
+
+        .generateButton:disabled {
+            width: 10px;
+            opacity: 0;
+        }
+
+        .generateButton>* {
+            position: relative;
+        }
+
+
+        .generateButton>span {
+            white-space: nowrap;
+        }
+
+        .generateButton:disabled>* {
+            opacity: 0;
+            position: absolute;
+        }
+
+
+        .generateButton>* {
+            color: white;
+        }
+
+        .generateButton:active>* {
+            color: black;
         }
     </style>
 </body>

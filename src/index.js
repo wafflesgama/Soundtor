@@ -2,7 +2,6 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const EventEmitter = require('events')
 const loadingEvents = new EventEmitter()
-
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
@@ -16,8 +15,8 @@ const createLoadingWindow = () => {
       nodeIntegration: true,
       contextIsolation: false,
     },
-    width: 800,
-    height: 600,
+    width: 600,
+    height: 400,
     frame: false,
     transparent: true
   });
@@ -33,6 +32,10 @@ const createLoadingWindow = () => {
   //mainWindow.webContents.openDevTools();
 };
 
+
+
+
+
 const createMainWindow = () => {
 
   // Create the browser window.
@@ -42,15 +45,15 @@ const createMainWindow = () => {
       contextIsolation: false,
     },
     show: false,
-    width: 1200,
-    height: 900,
+    width: 1000,
+    height: 600,
   });
 
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   loadingEvents.on('finished', () => {
     mainWindow.show();
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
   })
   // and load the index.html of the app.
 
@@ -64,7 +67,7 @@ app.on('ready', () => {
   createLoadingWindow();
   createMainWindow();
 
-  setTimeout(() => loadingEvents.emit('finished'), 2000);
+  setTimeout(() => loadingEvents.emit('finished'), 4000);
 
 
 
