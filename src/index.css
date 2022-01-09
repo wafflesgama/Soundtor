@@ -59,8 +59,9 @@ footer>* {
 }
 
 .logoTitle {
-  font-size: 20px;
+  width: 120px;
   font-weight: 800;
+  margin-top: 6px;
   color: var(--primaryColor);
 }
 

@@ -15,8 +15,8 @@ const createLoadingWindow = () => {
       nodeIntegration: true,
       contextIsolation: false,
     },
-    width: 600,
-    height: 400,
+    width: 500,
+    height: 300,
     frame: false,
     transparent: true
   });
@@ -68,7 +68,7 @@ app.on('ready', () => {
   createLoadingWindow();
   createMainWindow();
 
-  setTimeout(() => loadingEvents.emit('finished'), 4000);
+  setTimeout(() => loadingEvents.emit('finished'), 444000);
 
 
 

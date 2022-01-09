@@ -38,7 +38,7 @@
  AddGenerateButtonCallback();
  SetStatsVisibility(false);
  InitializeChart();
- OpenPort("127.0.0.1", 9001);
+ OpenPort("127.0.0.1", 8001);
 
  // Animations
  $(".a_button").click(function () {
