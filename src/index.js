@@ -68,7 +68,7 @@ app.on('ready', () => {
   createLoadingWindow();
   createMainWindow();
 
-  setTimeout(() => loadingEvents.emit('finished'), 994000);
+  setTimeout(() => loadingEvents.emit('finished'), 4000);
 
 
 

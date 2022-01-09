@@ -376,39 +376,6 @@
      udpPort.send(data);
  }
 
- function PortMessageReceived(message, timeTag, info) {
-     console.log("Port msg received : ", message);
- }
-
- function PortReady() {
-     connectionState = 1;
-     console.log("Port ready");
- }
-
- function ClosePort() {
-     udpPort.close();
- }
-
- function SendSelectedValues() {
-
-     args = [];
-     selectedValues.forEach((value) => {
-         args.push({
-             type: "f",
-             value: value
-         });
-     });
-
-     var msg = {
-         address: "/wek/inputs",
-         args: args
-     };
-     SendData(msg);
- }
-
- function SendData(data) {
-     udpPort.send(data);
- }
  //  document.getElementById("testButton").addEventListener("click", () => {
  //      if (numclick === 0) {
 
