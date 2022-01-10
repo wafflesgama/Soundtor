@@ -1,7 +1,7 @@
 ![Soundtor](./assets/full_logo_white.png)
 
-_Available for Windows x86/x64 and Mac x64 and arm64_
- Soundtor is a three layer system, that generates a playable MIDI instrument based on the user's inputs choices. Using a GUI (Electron app) the user chooses the desired sound properties from a set of predefined keywords. The subsequent layer (Wekinator app), it's pre-trained ML model translates the set of tags and outputs them into a larger set of data understandable by the final layer (Pure Data patch). This data patch manipulates sound waves’ properties such as pitch frequency, decay and allows the user to play with the generated soundwave by clicking on a virtual keyboard or through a MIDI input.
+### Available for Windows x86/x64 and Mac x64 and arm64
+ **Soundtor** is a three layer system, that generates a playable MIDI instrument based on the user's inputs choices. Using a GUI (Electron app) the user chooses the desired sound properties from a set of predefined keywords. The subsequent layer (Wekinator app), it's pre-trained ML model translates the set of tags and outputs them into a larger set of data understandable by the final layer (Pure Data patch). This data patch manipulates sound waves’ properties such as pitch frequency, decay and allows the user to play with the generated soundwave by clicking on a virtual keyboard or through a MIDI input.<br/>
  The connection between all layers are accomplished with Open Sound Control (OSC) through a UDP socket (Local Port 7001, Remote Port 8001) 
 
 # Demo
