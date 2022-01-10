@@ -67,11 +67,7 @@ const createMainWindow = () => {
 app.on('ready', () => {
   createLoadingWindow();
   createMainWindow();
-
-  setTimeout(() => loadingEvents.emit('finished'), 444000);
-
-
-
+  setTimeout(() => loadingEvents.emit('finished'), 4000);
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
