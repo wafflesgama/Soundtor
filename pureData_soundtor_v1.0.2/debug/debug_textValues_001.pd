@@ -1,0 +1,302 @@
+#N canvas 31 590 526 393 12;
+#N canvas 831 195 840 624 send5weki_001 0;
+#X obj 1 1 cnv 15 369 169 empty empty empty 20 12 0 14 #35a508 #404040
+0;
+#X obj 32 142 nbx 5 14 0 1 0 0 empty empty var1 0 -8 0 10 #000000 #00ff04
+#000000 0 256;
+#X obj 96 142 nbx 5 14 0 1 0 0 empty empty var2 0 -8 0 10 #000000 #00ff04
+#000000 0 256;
+#X obj 160 142 nbx 5 14 0 1 0 0 empty empty var3 0 -8 0 10 #000000
+#00ff04 #000000 0 256;
+#X obj 224 142 nbx 5 14 0 1 0 0 empty empty var4 0 -8 0 10 #000000
+#00ff04 #000000 0 256;
+#X obj 289 142 nbx 5 14 0 1 0 0 empty empty var5 0 -8 0 10 #000000
+#00ff04 #000000 0 256;
+#X obj 32 68 vsl 15 50 0 1 0 0 empty \$0-var0001 empty 0 -9 0 10 #000000
+#00ff04 #000000 0 1;
+#X obj 96 68 vsl 15 50 0 1 0 0 empty \$0-var0002 empty 0 -9 0 10 #000000
+#00ff04 #000000 0 1;
+#X obj 160 68 vsl 15 50 0 1 0 0 empty \$0-var0003 empty 0 -9 0 10 #000000
+#00ff04 #000000 0 1;
+#X obj 224 68 vsl 15 50 0 1 0 0 empty \$0-var0004 empty 0 -9 0 10 #000000
+#00ff04 #000000 0 1;
+#X obj 289 68 vsl 15 50 0 1 0 0 empty \$0-var0005 empty 0 -9 0 10 #000000
+#00ff04 #000000 0 1;
+#X obj 67 297 packOSC;
+#X obj 67 384 udpsend;
+#X msg 112 355 disconnect;
+#X obj 67 239 pack f f f f f;
+#X msg 67 268 send /wek/inputs \$1 \$2 \$3 \$4 \$5;
+#X obj 129 35 nbx 5 14 0 20000 0 0 empty empty OSC\\\ port\\\ out 0
+-8 0 10 #000000 #00ff04 #000000 0 256;
+#X obj 300 267 f;
+#X obj 218 35 bng 15 250 50 0 empty empty set 17 7 0 10 #000000 #00ff04
+#000000;
+#X obj 330 267 i, f 2;
+#X msg 90 326 connect 127.0.0.1 \$1;
+#X msg 300 291 \$1;
+#X msg 390 92 8001;
+#X obj 404 61 loadbang;
+#X obj 89 185 f, f 2;
+#X obj 119 185 f, f 2;
+#X obj 149 185 f, f 2;
+#X obj 179 185 f, f 2;
+#X obj 209 185 f, f 2;
+#X obj 316 87 bng 15 250 50 0 empty empty send 17 7 0 10 #000000 #00ff04
+#000000;
+#X obj 317 51 tgl 14 0 empty empty run 17 7 0 10 #000000 #00ff04 #000000
+0 1;
+#X obj 382 191 spigot;
+#X obj 559 131 midiin;
+#X floatatom 377 253 0 0 0 0 - - - 0;
+#X obj 377 223 ctlin 70 1;
+#X obj 377 276 / 127;
+#X floatatom 467 253 0 0 0 0 - - - 0;
+#X obj 467 276 / 127;
+#X obj 467 223 ctlin 71 1;
+#X floatatom 557 253 0 0 0 0 - - - 0;
+#X obj 557 276 / 127;
+#X floatatom 647 253 0 0 0 0 - - - 0;
+#X obj 647 276 / 127;
+#X obj 557 223 ctlin 72 1;
+#X obj 647 223 ctlin 73 1;
+#X floatatom 737 253 0 0 0 0 - - - 0;
+#X obj 737 276 / 127;
+#X obj 737 223 ctlin 74 1;
+#X connect 1 0 24 1;
+#X connect 1 0 31 0;
+#X connect 2 0 25 1;
+#X connect 2 0 31 0;
+#X connect 3 0 26 1;
+#X connect 3 0 31 0;
+#X connect 4 0 27 1;
+#X connect 4 0 31 0;
+#X connect 5 0 28 1;
+#X connect 5 0 31 0;
+#X connect 6 0 1 0;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 4 0;
+#X connect 10 0 5 0;
+#X connect 11 0 12 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 15 0 11 0;
+#X connect 16 0 19 0;
+#X connect 17 0 21 0;
+#X connect 18 0 17 0;
+#X connect 19 0 17 1;
+#X connect 20 0 12 0;
+#X connect 21 0 20 0;
+#X connect 22 0 16 0;
+#X connect 23 0 22 0;
+#X connect 24 0 14 0;
+#X connect 25 0 14 1;
+#X connect 26 0 14 2;
+#X connect 27 0 14 3;
+#X connect 28 0 14 4;
+#X connect 29 0 28 0;
+#X connect 29 0 27 0;
+#X connect 29 0 26 0;
+#X connect 29 0 25 0;
+#X connect 29 0 24 0;
+#X connect 30 0 31 1;
+#X connect 31 0 29 0;
+#X connect 33 0 35 0;
+#X connect 34 0 33 0;
+#X connect 35 0 6 0;
+#X connect 36 0 37 0;
+#X connect 37 0 7 0;
+#X connect 38 0 36 0;
+#X connect 39 0 40 0;
+#X connect 40 0 8 0;
+#X connect 41 0 42 0;
+#X connect 42 0 9 0;
+#X connect 43 0 39 0;
+#X connect 44 0 41 0;
+#X connect 45 0 46 0;
+#X connect 46 0 10 0;
+#X connect 47 0 45 0;
+#X coords 0 -1 1 1 370 170 1 0 0;
+#X restore 77 15 pd send5weki_001;
+#N canvas 99 143 1203 265 treinarPalavras_001 0;
+#X obj 1 1 cnv 15 498 198 empty empty empty 20 12 0 14 #00a123 #404040
+0;
+#X obj 30 68 bng 15 250 50 0 \$0-sequeal empty squeal 20 7 0 10 #000000
+#00ff04 #000000;
+#X text 28 16 param 1;
+#X obj 30 94 bng 15 250 50 0 \$0-muffled empty muffled 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 30 119 bng 15 250 50 0 \$0-dark empty dark 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 30 145 bng 15 250 50 0 \$0-rich empty rich 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 120 68 bng 15 250 50 0 \$0-melodical empty melodical 20 7 0
+10 #000000 #00ff04 #000000;
+#X obj 120 94 bng 15 250 50 0 \$0-pad empty pad 20 7 0 10 #000000 #00ff04
+#000000;
+#X obj 120 119 bng 15 250 50 0 \$0-percussive empty percussive 20 7
+0 10 #000000 #00ff04 #000000;
+#X text 118 16 param 2;
+#X obj 220 68 bng 15 250 50 0 \$0-dreamy empty dreamy 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 220 94 bng 15 250 50 0 \$0-mellow empty mellow 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 220 119 bng 15 250 50 0 \$0-dry empty dry 20 7 0 10 #000000
+#00ff04 #000000;
+#X text 218 16 param 3;
+#X obj 308 68 bng 15 250 50 0 \$0-classical empty classical 20 7 0
+10 #000000 #00ff04 #000000;
+#X obj 308 94 bng 15 250 50 0 \$0-funky empty funky 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 308 119 bng 15 250 50 0 \$0-grim empty grim 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 308 145 bng 15 250 50 0 \$0-noisy empty noisy 20 7 0 10 #000000
+#00ff04 #000000;
+#X text 306 16 param 4;
+#X obj 308 170 bng 15 250 50 0 \$0-pure empty pure 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 410 68 bng 15 250 50 0 \$0-soft empty soft 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 410 94 bng 15 250 50 0 \$0-bang empty bang 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 410 119 bng 15 250 50 0 \$0-grinding empty grinding 20 7 0 10
+#000000 #00ff04 #000000;
+#X text 408 16 param 5;
+#X obj 526 76 bng 15 250 50 0 empty \$0-sequeal squeal 20 7 0 10 #000000
+#00ff04 #000000;
+#X text 524 17 param 1;
+#X obj 526 102 bng 15 250 50 0 empty \$0-muffled muffled 20 7 0 10
+#000000 #00ff04 #000000;
+#X obj 526 127 bng 15 250 50 0 empty \$0-dark dark 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 526 153 bng 15 250 50 0 empty \$0-rich rich 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 636 76 bng 15 250 50 0 empty \$0-melodical melodical 20 7 0
+10 #000000 #00ff04 #000000;
+#X obj 636 102 bng 15 250 50 0 empty \$0-pad pad 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 636 127 bng 15 250 50 0 empty \$0-percussive percussive 20 7
+0 10 #000000 #00ff04 #000000;
+#X text 634 17 param 2;
+#X obj 806 76 bng 15 250 50 0 empty \$0-dreamy dreamy 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 806 102 bng 15 250 50 0 empty \$0-mellow mellow 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 806 127 bng 15 250 50 0 empty \$0-dry dry 20 7 0 10 #000000
+#00ff04 #000000;
+#X text 804 17 param 3;
+#X obj 934 76 bng 15 250 50 0 empty \$0-classical classical 20 7 0
+10 #000000 #00ff04 #000000;
+#X obj 934 102 bng 15 250 50 0 empty \$0-funky funky 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 934 127 bng 15 250 50 0 empty \$0-grim grim 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 934 153 bng 15 250 50 0 empty \$0-noisy noisy 20 7 0 10 #000000
+#00ff04 #000000;
+#X text 932 17 param 4;
+#X obj 934 178 bng 15 250 50 0 empty \$0-pure pure 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 1066 76 bng 15 250 50 0 empty \$0-soft soft 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 1066 102 bng 15 250 50 0 empty \$0-bang bang 20 7 0 10 #000000
+#00ff04 #000000;
+#X obj 1066 127 bng 15 250 50 0 empty \$0-grinding grinding 20 7 0
+10 #000000 #00ff04 #000000;
+#X text 1064 17 param 5;
+#X msg 583 73 0.98;
+#X obj 527 187 s \$0-var0001;
+#X msg 591 97 0.2;
+#X msg 579 123 0.43;
+#X msg 578 150 0.68;
+#X obj 30 43 bng 15 250 50 0 \$0-rst0001 empty reset 20 7 0 10 #ff0400
+#00ff04 #000000;
+#X obj 120 43 bng 15 250 50 0 \$0-rst0002 empty reset 20 7 0 10 #ff0400
+#00ff04 #000000;
+#X obj 220 43 bng 15 250 50 0 \$0-rst0003 empty reset 20 7 0 10 #ff0400
+#00ff04 #000000;
+#X obj 308 43 bng 15 250 50 0 \$0-rst0004 empty reset 20 7 0 10 #ff0400
+#00ff04 #000000;
+#X obj 410 43 bng 15 250 50 0 \$0-rst0005 empty reset 20 7 0 10 #ff0400
+#00ff04 #000000;
+#X obj 526 51 bng 15 250 50 0 empty \$0-rst0001 reset 20 7 0 10 #ff0400
+#00ff04 #000000;
+#X msg 583 48 0;
+#X obj 636 51 bng 15 250 50 0 empty \$0-rst0002 reset 20 7 0 10 #ff0400
+#00ff04 #000000;
+#X msg 691 48 0;
+#X obj 806 51 bng 15 250 50 0 empty \$0-rst0003 reset 20 7 0 10 #ff0400
+#00ff04 #000000;
+#X msg 863 48 0;
+#X obj 934 51 bng 15 250 50 0 empty \$0-rst0004 reset 20 7 0 10 #ff0400
+#00ff04 #000000;
+#X msg 991 48 0;
+#X obj 1065 51 bng 15 250 50 0 empty \$0-rst0005 reset 20 7 0 10 #ff0400
+#00ff04 #000000;
+#X msg 1122 48 0;
+#X msg 714 73 0.54;
+#X msg 679 97 0.78;
+#X msg 722 123 0.15;
+#X obj 649 151 s \$0-var0002;
+#X obj 807 151 s \$0-var0003;
+#X msg 864 73 0.65;
+#X msg 867 97 0.35;
+#X msg 849 123 0.04;
+#X obj 937 204 s \$0-var0004;
+#X msg 1011 73 0.35;
+#X msg 989 97 0.67;
+#X msg 989 123 0.78;
+#X msg 989 147 1;
+#X msg 989 173 0.01;
+#X msg 1117 73 0.78;
+#X msg 1117 97 1;
+#X msg 1139 123 0.01;
+#X obj 1076 150 s \$0-var0005;
+#X connect 24 0 47 0;
+#X connect 26 0 49 0;
+#X connect 27 0 50 0;
+#X connect 28 0 51 0;
+#X connect 29 0 67 0;
+#X connect 30 0 68 0;
+#X connect 31 0 69 0;
+#X connect 33 0 72 0;
+#X connect 34 0 73 0;
+#X connect 35 0 74 0;
+#X connect 37 0 76 0;
+#X connect 38 0 77 0;
+#X connect 39 0 78 0;
+#X connect 40 0 79 0;
+#X connect 42 0 80 0;
+#X connect 43 0 81 0;
+#X connect 44 0 82 0;
+#X connect 45 0 83 0;
+#X connect 47 0 48 0;
+#X connect 49 0 48 0;
+#X connect 50 0 48 0;
+#X connect 51 0 48 0;
+#X connect 57 0 58 0;
+#X connect 58 0 48 0;
+#X connect 59 0 60 0;
+#X connect 60 0 70 0;
+#X connect 61 0 62 0;
+#X connect 62 0 71 0;
+#X connect 63 0 64 0;
+#X connect 64 0 75 0;
+#X connect 65 0 66 0;
+#X connect 66 0 84 0;
+#X connect 67 0 70 0;
+#X connect 68 0 70 0;
+#X connect 69 0 70 0;
+#X connect 72 0 71 0;
+#X connect 73 0 71 0;
+#X connect 74 0 71 0;
+#X connect 76 0 75 0;
+#X connect 77 0 75 0;
+#X connect 78 0 75 0;
+#X connect 79 0 75 0;
+#X connect 80 0 75 0;
+#X connect 81 0 84 0;
+#X connect 82 0 84 0;
+#X connect 83 0 84 0;
+#X coords 0 -1 1 1 500 200 1 0 0;
+#X restore 13 186 pd treinarPalavras_001;
